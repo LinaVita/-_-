@@ -1,0 +1,308 @@
+﻿<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майстер НМТ - Головна</title>
+    <style>
+        body {
+            font-family: Cooper, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff6ea;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #554436;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            .nav-links a {
+                color: wheat;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+        .hero {
+            background: linear-gradient(to right, #61abd5, #b0d7ea);
+            color: navajowhite;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin: 0 auto 2rem;
+            }
+
+        .btn-primary {
+            background-color: #e0d3cd;
+            color: #61abd5;
+            padding: 0.8rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+            .btn-primary:hover {
+                background-color: #96765a;
+                transform: translateY(-2px);
+            }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            padding: 3rem 2rem;
+        }
+
+        .feature-card {
+            background-color: aliceblue;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            width: 300px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            background-color: #EFF6FF;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            color: #1E3A8A;
+            font-size: 2rem;
+        }
+
+        .btn-outline {
+            background-color:  transparent;
+            color: #61abd5;
+            border: 1px solid #61abd5;
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+                text-decoration: none;
+                    display: inline-block;
+                    transition: all 0.3s;
+                    margin-top: 1rem;
+                }
+                .btn-outline:hover {
+                    background-color: #61abd5;
+                    color: white;
+                }
+                .updates-section {
+                    background-color: #f8f9fa;
+                    padding: 3rem 2rem;
+                    margin-top: 2rem;
+                }
+                .updates-title {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    font-size: 1.8rem;
+                }
+                .updates-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .update-card {
+                    background-color: white;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                    padding: 1.5rem;
+                    width: 500px;
+                }
+                .update-title {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                }
+                .update-date {
+                    color: #6c757d;
+                    font-size: 0.9rem;
+                    margin-top: 1rem;
+                }
+                .testimonials-section {
+                    padding: 3rem 2rem;
+                }
+                .testimonials-title {
+                    text-align: center;
+                    margin-bottom: 2rem;
+                    font-size: 1.8rem;
+                }
+                .testimonials-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto;
+                }
+                .testimonial-card {
+                    background-color: aliceblue;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+                    padding: 1.5rem;
+                    width: 300px;
+                }
+                .testimonial-header {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                }
+                .testimonial-avatar {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    background-color: #61abd5;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.5rem;
+                    margin-right: 1rem;
+                }
+                .testimonial-info h5 {
+                    margin: 0;
+                    font-size: 1.1rem;
+                }
+                .rating {
+                    color: #ffc107;
+                    margin-top: 0.3rem;
+                }
+                footer {
+                    background-color: #3B82F6;
+                    color: aliceblue;
+                    text-align: center;
+                    padding: 1.5rem;
+                    margin-top: 2rem;
+                }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Майстер НМТ</div>
+        <div class="nav-links">
+            <a href="#">Головна</a>
+            <a href="#">Предмети</a>
+            <a href="#">Тести</a>
+            <a href="#">Матеріали</a>
+            <a href="#">Контакти</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Готуйся до НМТ ефективно!</h1>
+        <p>Інтерактивна платформа для підготовки до Національного мультипредметного тесту. Тести, навчальні матеріали та персоналізовані рекомендації — все для вашого успіху!</p>
+        <a href="#" class="btn-primary">Розпочати навчання</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Навчальні матеріали</h3>
+            <p>Доступ до структурованих матеріалів з усіх предметів НМТ, розроблених досвідченими викладачами.</p>
+            <a href="#" class="btn-outline">Перейти до матеріалів</a>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">✓</div>
+            <h3>Тестування</h3>
+            <p>Тренувальні тести та симуляції реального НМТ для перевірки знань та відпрацювання навичок.</p>
+            <a href="#" class="btn-outline">Пройти тести</a>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Аналітика прогресу</h3>
+            <p>Детальний аналіз ваших результатів з рекомендаціями для покращення підготовки.</p>
+            <a href="#" class="btn-outline">Мій прогрес</a>
+        </div>
+    </section>
+
+    <section class="updates-section">
+        <h2 class="updates-title">Останні оновлення</h2>
+        <div class="updates-container">
+            <div class="update-card">
+                <h5 class="update-title">Додано нові тести з математики</h5>
+                <p>Тепер доступні додаткові тести з тем "Функції" та "Рівняння".</p>
+                <p class="update-date">12.03.2023</p>
+            </div>
+            <div class="update-card">
+                <h5 class="update-title">Оновлено матеріали з української мови</h5>
+                <p>Додано нові правила та приклади з теми "Пунктуація".</p>
+                <p class="update-date">10.03.2023</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2 class="testimonials-title">Відгуки користувачів</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">М</div>
+                    <div class="testimonial-info">
+                        <h5>Марія К.</h5>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Завдяки сайту я значно підвищила свій рівень знань з математики. Тести дуже схожі на ті, що були на реальному НМТ."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">О</div>
+                    <div class="testimonial-info">
+                        <h5>Олександр П.</h5>
+                        <div class="rating">★★★★☆</div>
+                    </div>
+                </div>
+                <p>"Дуже зручна платформа для підготовки. Особливо сподобалась аналітика, яка допомогла мені зосередитись на слабких темах."</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">І</div>
+                    <div class="testimonial-info">
+                        <h5>Ірина В.</h5>
+                        <div class="rating">★★★★★</div>
+                    </div>
+                </div>
+                <p>"Матеріали чудово структуровані. За місяць підготовки з цією платформою я змогла повторити всю програму з історії України."</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2023 Майстер НМТ. Всі права захищено.</p>
+    </footer>
+</body>
+</html>

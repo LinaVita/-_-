@@ -1,0 +1,124 @@
+﻿@using МайстерНМТ.Views.Tests
+model МайстерНМТ.Model.TestResult
+
+@{
+    ViewData["Title"] = "Результати тесту";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Головна</a></li>
+                    <li class="breadcrumb-item"><a asp-controller="Tests" asp-action="Index">Тести</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Результати</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">Результати тесту з предмету "@Model.Subject.Name"</h2>
+                </div>
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <div class="display-1 mb-2">@Model.Percentage%</div>
+                        <div class="mb-3">
+                            @if (Model.Percentage >= 80)
+                            {
+                                <span class="badge bg-success fs-5">Відмінно</span>
+                            }
+                            else if (Model.Percentage >= 60)
+                            {
+                                <span class="badge bg-primary fs-5">Добре</span>
+                            }
+                            else if (Model.Percentage >= 40)
+                            {
+                                <span class="badge bg-warning text-dark fs-5">Задовільно</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger fs-5">Потребує покращення</span>
+                            }
+                        </div>
+                        <p class="lead">Правильних відповідей: <strong>@Model.CorrectAnswers з @Model.TotalQuestions</strong></p>
+                        <p>Дата проходження: @Model.CompletedDate.ToString("dd.MM.yyyy HH:mm")</p>
+                    </div>
+
+                    <!-- Прогрес-бар з результатом -->
+                    <div class="progress mb-4" style="height: 30px;">
+                        <div class="progress-bar @(Model.Percentage >= 80 ? "bg-success" : Model.Percentage >= 60 ? "bg-primary" : Model.Percentage >= 40 ? "bg-warning" : "bg-danger")"
+                             role="progressbar"
+                             style="width: @Model.Percentage%;"
+                             aria-valuenow="@Model.Percentage"
+                             aria-valuemin="0"
+                             aria-valuemax="100">
+                            @Model.Percentage%
+                        </div>
+                    </div>
+
+                    <!-- Рекомендації на основі результатів -->
+                    <div class="mt-4">
+                        <h4 class="mb-3">Рекомендації для покращення:</h4>
+
+                        @if (Model.Percentage >= 80)
+                        {
+                            <div class="alert alert-success">
+                                <p>Вітаємо! Ви маєте відмінний рівень знань з цього предмету.</p>
+                                <p>Рекомендації:</p>
+                                <ul>
+                                    <li>Спробуйте більш складні тести для поглиблення знань</li>
+                                    <li>Ознайомтеся з додатковими матеріалами для розширення кругозору</li>
+                                </ul>
+                            </div>
+                        }
+                        else if (Model.Percentage >= 60)
+                        {
+                            <div class="alert alert-primary">
+                                <p>Ви маєте хороший рівень знань, але є можливості для вдосконалення.</p>
+                                <p>Рекомендації:</p>
+                                <ul>
+                                    <li>Повторіть теми, де були допущені помилки</li>
+                                    <li>Пройдіть тематичні тести для закріплення знань</li>
+                                </ul>
+                            </div>
+                        }
+                        else if (Model.Percentage >= 40)
+                        {
+                            <div class="alert alert-warning">
+                                <p>Ваш рівень знань задовільний, але потребує суттєвого покращення.</p>
+                                <p>Рекомендації:</p>
+                                <ul>
+                                    <li>Присвятіть більше часу вивченню матеріалів з цього предмету</li>
+                                    <li>Повторіть основні теми та закріпіть їх практичними завданнями</li>
+                                    <li>Регулярно проходьте тести для перевірки прогресу</li>
+                                </ul>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="alert alert-danger">
+                                <p>Ваш рівень знань потребує значного покращення.</p>
+                                <p>Рекомендації:</p>
+                                <ul>
+                                    <li>Почніть з базових тем та поступово переходьте до складніших</li>
+                                    <li>Регулярно вивчайте матеріали та виконуйте практичні завдання</li>
+                                    <li>Розгляньте можливість додаткової допомоги чи консультацій</li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="card-footer d-flex justify-content-between">
+                    <a asp-controller="Tests" asp-action="Start" asp-route-subjectId="@Model.SubjectId" class="btn btn-primary">Пройти тест ще раз</a>
+                    <a asp-controller="Analytics" asp-action="Index" class="btn btn-outline-primary">Переглянути повну аналітику</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

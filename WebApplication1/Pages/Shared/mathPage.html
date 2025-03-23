@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Майстер НМТ - Математика</title>
+    <style>
+        body {
+            font-family: Cooper, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F3F4F6;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            .nav-links a {
+                color: white;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+        .subject-header {
+            background-color: #DBEAFE;
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 4px solid #1E3A8A;
+        }
+
+            .subject-header h1 {
+                color: #1E3A8A;
+                margin-bottom: 0.5rem;
+            }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .topic-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+            .topic-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .topic-header {
+            background-color: #1E3A8A;
+            color: white;
+            padding: 1rem;
+            font-weight: bold;
+        }
+
+        .topic-content {
+            padding: 1rem;
+        }
+
+        .topic-progress {
+            height: 8px;
+            background-color: #E5E7EB;
+            border-radius: 4px;
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #10B981;
+            border-radius: 4px;
+        }
+
+        .topic-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        .btn-topic {
+            display: block;
+            text-align: center;
+            background-color: #EFF6FF;
+            color: #1E3A8A;
+            padding: 0.7rem;
+            border-radius: 0.3rem;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+            .btn-topic:hover {
+                background-color: #DBEAFE;
+            }
+
+        footer {
+            background-color: #1E3A8A;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Майстер НМТ</div>
+        <div class="nav-links">
+            <a href="#">Головна</a>
+            <a href="#">Предмети</a>
+            <a href="#">Тести</a>
+            <a href="#">Матеріали</a>
+            <a href="#">Контакти</a>
+        </div>
+    </nav>
+
+    <section class="subject-header">
+        <h1>Математика</h1>
+        <p>Основні теми та матеріали для підготовки з математики до НМТ</p>
+    </section>
+
+    <section class="topic-grid">
+        <div class="topic-card">
+            <div class="topic-header">Алгебраїчні вирази</div>
+            <div class="topic-content">
+                <p>Дії з числами. Дробові та ірраціональні вирази. Тотожні перетворення.</p>
+                <div class="topic-progress">
+                    <div class="progress-bar" style="width: 75%"></div>
+                </div>
+                <div class="topic-stats">
+                    <span>12 уроків</span>
+                    <span>75% завершено</span>
+                </div>
+                <a href="#" class="btn-topic">Продовжити вивчення</a>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header">Рівняння та нерівності</div>
+            <div class="topic-content">
+                <p>Лінійні, квадратні та дробово-раціональні рівняння. Системи рівнянь.</p>
+                <div class="topic-progress">
+                    <div class="progress-bar" style="width: 40%"></div>
+                </div>
+                <div class="topic-stats">
+                    <span>15 уроків</span>
+                    <span>40% завершено</span>
+                </div>
+                <a href="#" class="btn-topic">Продовжити вивчення</a>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header">Функції</div>
+            <div class="topic-content">
+                <p>Властивості та графіки функцій. Дослідження функцій. Область визначення.</p>
+                <div class="topic-progress">
+                    <div class="progress-bar" style="width: 20%"></div>
+                </div>
+                <div class="topic-stats">
+                    <span>10 уроків</span>
+                    <span>20% завершено</span>
+                </div>
+                <a href="#" class="btn-topic">Продовжити вивчення</a>
+            </div>
+        </div>
+
+        <div class="topic-card">
+            <div class="topic-header">Планіметрія</div>
+            <div class="topic-content">
+                <p>Трикутники, чотирикутники, многокутники. Коло і круг. Вписані та описані фігури.</p>
+                <div class="topic-progress">
+                    <div class="progress-bar" style="width: 0%"></div>
+                </div>
+                <div class="topic-stats">
+                    <span>14 уроків</span>
+                    <span>0% завершено</span>
+                </div>
+                <a href="#" class="btn-topic">Розпочати вивчення</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 - Майстер НМТ. Всі права захищені.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Підготовка до НМТ</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light bg-pink fixed-top border-bottom">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="~/images/logo.svg" alt="Логотип НМТ Підготовка" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Index">Головна</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="About">Про НМТ</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Предмети
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" asp-controller="Subject" asp-action="Details" asp-route-id="1">Українська мова</a>
+                        <a class="dropdown-item" asp-controller="Subject" asp-action="Details" asp-route-id="2">Математика</a>
+                        <a class="dropdown-item" asp-controller="Subject" asp-action="Details" asp-route-id="3">Історія України</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Test" asp-action="Index">Тести</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-controller="Home" asp-action="Contact">Контакти</a>
+                </li>
+            </ul>
+
+            <!-- Кнопки "Увійти" і "Реєстрація" справа -->
+            <div class="ms-auto">
+                <partial name="_LoginPartial" />
+            </div>
+        </div>
+    </div>
+</nav>
+
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>НМТ Підготовка</h5>
+                    <p>Допомагаємо студентам успішно скласти Національний мультипредметний тест з 2023 року.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#" class="mr-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="mr-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="mr-2"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Швидкі посилання</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Головна</a></li>
+                        <li><a href="#">Про нас</a></li>
+                        <li><a href="#">Предмети</a></li>
+                        <li><a href="#">Контакти</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Предмети</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Українська мова</a></li>
+                        <li><a href="#">Математика</a></li>
+                        <li><a href="#">Історія України</a></li>
+                        <li><a href="#">Англійська мова</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Підпишіться на розсилку</h5>
+                    <p>Отримуйте новини та оновлення тестів.</p>
+                    <form>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Ваш email" aria-label="Ваш email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">Підписатись</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-12 text-center">
+                    <p>&copy; @DateTime.Now.Year - НМТ Підготовка. Всі права захищено.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/123456789.js" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
